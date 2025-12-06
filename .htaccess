@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /
+
+# If file or folder exists → allow normal load
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Otherwise → always load index.html (React Router handles route)
+RewriteRule . /index.html [L]
